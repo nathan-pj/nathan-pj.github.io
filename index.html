@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPN G.1.M Testing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .video-container {
+            display: flex;
+            gap: 20px; /* Space between videos */
+        }
+        video {
+            width: 300px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <video id="video1" loop muted>
+        <source src="./g1m.webm" type="video/webm">
+        <source src="your-video-file.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="video2" loop muted>
+        <source src="./G1MV2.webm" type="video/webm">
+        <source src="your-video-file.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="video3" loop muted>
+        <source src="./v3.webm" type="video/webm">
+        <source src="your-video-file.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <video id="video3" loop muted>
+        <source src="./v4.webm" type="video/webm">
+        <source src="your-video-file.ogv" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    const videos = document.querySelectorAll('video');
+
+    videos.forEach(video => {
+        video.addEventListener('mouseenter', () => {
+            video.play();
+        });
+
+        video.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        window.addEventListener('load', () => {
+            video.currentTime = 0;
+            video.pause();
+        });
+    });
+</script>
+
+</body>
+</html>
